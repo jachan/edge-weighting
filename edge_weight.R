@@ -3,7 +3,6 @@ nodeMode = FALSE
 
 #parses input from terminal, and determines if node-mode is true or not
 args = commandArgs(trailingOnly = TRUE)
-print(args)
 if (length(args)!=6) {
   if(length(args)!=7){
     stop("Wrong number of arguments.\n", call.=FALSE)
@@ -52,7 +51,7 @@ for(n in 1:nrow(track_network)){
 }
 track_network = track_network[1:cons,]
 
-#removes all rows of track_tracker except for those between nodes in the node-list
+#removes all rows of track_tracker except for those between nodes in the nodeList
 if(nodeMode){
   start = vector(mode = "numeric")
   end = vector(mode = "numeric")
@@ -69,9 +68,11 @@ track_network=as.matrix(track_network)
 surface_area=as.matrix(surface_area)
 
 #creates empty edge weight matrix
-edge_weights = track_network[,1:2]
-edge_weights = cbind(edge_weights,c(array(0,nrow(edge_weights))))
-colnames(edge_weights)[3] = "edge weight"
+print(nrow(track_network))
+edge_weights = matrix(nrow = nrow(track_network),ncol = 3) 
+edge_weights[,1:2] = track_network[,1:2]
+edge_weights[,3] = 0
+colnames(edge_weights) = c("source node", "dest node", "edge weight")
 
 #calculates edge weights
 for(n in 1:nrow(edge_weights)){
