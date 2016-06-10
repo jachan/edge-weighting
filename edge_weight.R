@@ -31,7 +31,7 @@ if(nodeMode){
 if(substr(output, nchar(output), nchar(output)) != "/"){
   stop("Output stream is missing a '/'\n", call.=FALSE)
 }
-  
+
 #creates the path for output
 output = paste(output,"edge_weights.csv", sep = "")
 
@@ -68,8 +68,7 @@ track_network=as.matrix(track_network)
 surface_area=as.matrix(surface_area)
 
 #creates empty edge weight matrix
-print(nrow(track_network))
-edge_weights = matrix(nrow = nrow(track_network),ncol = 3) 
+edge_weights = matrix(nrow = nrow(track_network),ncol = 3)
 edge_weights[,1:2] = track_network[,1:2]
 edge_weights[,3] = 0
 colnames(edge_weights) = c("source node", "dest node", "edge weight")
