@@ -28,7 +28,7 @@ if(nodeMode){
 #node-list is a space delimited list of nodes of interest
 
 #if the output stream is a directory, appends a default name of "edge_weights.csv"
-if(substr(output, nchar(output), nchar(output)) = "/"){
+if(substr(output, nchar(output), nchar(output)) == "/"){
   output = paste(output,"edge_weights.csv", sep = "")
 }else if(substring(output, nchar(output)-4+1, nchar(output)) != ".csv"){
   stop("Error: Extension not .csv")
