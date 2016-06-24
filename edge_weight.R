@@ -27,13 +27,10 @@ if(nodeMode){
 #p is the number of seeds per voxel
 #node-list is a space delimited list of nodes of interest
 
-#ensures that there is a "/" in the output path
-if(substr(output, nchar(output), nchar(output)) != "/"){
-  stop("Output stream is missing a '/'\n", call.=FALSE)
+#if the output stream is a directory, appends a default name of "edge_weights.csv"
+if(substr(output, nchar(output), nchar(output)) = "/"){
+  output = paste(output,"edge_weights.csv", sep = "")
 }
-
-#creates the path for output
-output = paste(output,"edge_weights.csv", sep = "")
 
 #reads in data
 track_network = read.csv(file=track_network ,head = TRUE, sep="\t")
