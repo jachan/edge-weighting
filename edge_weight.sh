@@ -1,5 +1,4 @@
 #!/bin/bash
-# $0 is the script name
 # $1 is the path to the R script
 # $2 is the path to track_network.csv
 # $3 is the path to surface_area.csv
