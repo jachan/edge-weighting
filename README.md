@@ -1,8 +1,7 @@
 # edge-weighting
 This is a tool made in Dr. Mareci's Lab to make scripting the edge weight calculations easier. The folder should contain edge_weight.sh and edge_weight.R. The shell script can be run without having to type ./edge_weight.sh by placing it within /usr/local/bin/. The script takes either 6 or 7 arguments which are detailed in the comments of edge_weight.sh.  Type -h for help.
 
-Basic Usage
-
+Basic Usage:  
 $0 is the script name  
 $1 is the path to the R script  
 $2 is the path to track_network.csv  
