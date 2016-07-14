@@ -1,11 +1,11 @@
 #!/bin/bash
-# $1 is the path to the R script
-# $2 is the path to track_network.csv
-# $3 is the path to surface_area.csv
-# $4 is the path to the desired output file, if no file name is specified, it defaults to "edge_weights.csv"
-# $5 is the volume of each voxel
-# $6 is the number of seeds per voxel
-# $7 is a list of nodes of interest in the format "first,second,third,etc"
+# Runs the R script located at faraday/john.chan/scripts/edge-weighting/edge_weight.R
+# $1 is the path to track_network.csv
+# $2 is the path to surface_area.csv
+# $3 is the path to the desired output file, if no file name is specified, it defaults to "edge_weights.csv"
+# $4 is the volume of each voxel
+# $5 is the number of seeds per voxel
+# $6 is a list of nodes of interest in the format "first,second,third,etc"
 
 #help text
 if [ "$1" == "-h" ]; then
@@ -13,12 +13,11 @@ if [ "$1" == "-h" ]; then
   exit 0
 fi
 
-R="$1"
-TRK="$2"
-SA="$3"
-OUT="$4"
-VOL="$5"
-SEED="$6"
-LIST="$7"
+TRK="$1"
+SA="$2"
+OUT="$3"
+VOL="$4"
+SEED="$5"
+LIST="$6"
 
-Rscript $R --args $TRK $SA $OUT $VOL $SEED $LIST
+Rscript /export/faraday/john.chan/scripts/edge-weighting/edge_weight.R --args $TRK $SA $OUT $VOL $SEED $LIST
