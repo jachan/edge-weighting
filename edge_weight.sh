@@ -9,7 +9,7 @@
 
 #help text
 if [ "$1" == "-h" ]; then
-  printf "Usage: \n"\$1" [path to edge_weight.R] \n"\$2" [path to track_network output] \n"\$3" [path to surface area output] \n"\$4" [path to desired output file] \n"\$5" [volume of each voxel] \n"\$6" [number of seeds per voxel] \n"\$7" [optional argument in comma delimited format that specifies only connections between certain nodes] \n"
+  printf "Usage: \n"\$1" [path to track_network output] \n"\$2" [path to surface area output] \n"\$3" [path to desired output file] \n"\$4" [volume of each voxel] \n"\$5" [number of seeds per voxel] \n"\$6" [optional argument in comma delimited format that specifies only connections between certain nodes] \n"
   exit 0
 fi
 
