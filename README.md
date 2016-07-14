@@ -1,5 +1,6 @@
 # edge-weighting
 This is a tool made in Dr. Mareci's Lab to make scripting the edge weight calculations easier. The folder should contain edge_weight.sh and edge_weight.R. The shell script can be run without having to type ./edge_weight.sh by placing it within /usr/local/bin/. The script takes either 5 or 6 arguments which are detailed in the comments of edge_weight.sh.  Type -h for help.
+
 batch_ew takes in an input of line delimited file paths, and executes edge_weight for each.
 
 Basic Usage:  
